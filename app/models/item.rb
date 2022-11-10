@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   belongs_to :prefecture
   belongs_to :days_to_ship
 
-  validates :item_name, :item_description, :price, :user, : presence: true
+  validates :item_name, :item_description, :price, :user,  presence: true
 
   validates :item_category, :item_status, :shipping_charger, :prefecture, :days_to_ship,  numericality: { other_than: 1 } 
 
