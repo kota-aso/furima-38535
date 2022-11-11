@@ -7,11 +7,11 @@ class Item < ApplicationRecord
   belongs_to :prefecture
   belongs_to :days_to_ship
   has_one_attached :image
+  belongs_to :user
 
+  validates :item_name, :item_description, :image,  presence: true
 
-  validates :item_name, :item_description, :user_id, :image,  presence: true
-
-  validates :price, presence: true, numericality: {greater_than: 300, less_than: 9999999}
+  validates :price, presence: true, numericality: {only_integer: true, greater_than: 300, less_than: 9999999}
 
   validates :item_category_id, :item_status_id, :shipping_charger_id, :prefecture_id, :days_to_ship_id,  numericality: { other_than: 1 } 
 
