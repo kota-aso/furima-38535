@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :move_to_index, only: :index
+  before_action :already_purchased, only: :index
+  
 
   def index
     @item = Item.find(params[:item_id])
@@ -38,12 +40,20 @@ class OrdersController < ApplicationController
   end
 
   def pay_item
-    Payjp.api_key ="sk_test_4c0a6ea861427a9f52acbd76"
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     Payjp::Charge.create(
       amount: @item.price,
       card: order_params[:token], 
       currency: 'jpy'
     )
   end
+
+  def already_purchased
+    @item = Item.find(params[:item_id])
+    if @item.order.present?
+      redirect_to root_path
+    end
+  end
+
 
 end
