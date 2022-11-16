@@ -58,7 +58,6 @@ class ItemsController < ApplicationController
   end
 
   def already_purchased
-    @item = Item.find(params[:id])
     if @item.order.present?
       redirect_to root_path
     end

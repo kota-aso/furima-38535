@@ -1,8 +1,8 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_item, only: [:index, :create, :move_to_index, :already_purchased]
   before_action :move_to_index, only: :index
   before_action :already_purchased, only: :index
-  before_action :set_item, only: [:index, :create, :move_to_index, :already_purchased]
   
 
   def index
