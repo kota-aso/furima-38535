@@ -7,10 +7,10 @@
 | nickname           | string   | null: false                |
 | email              | string   | null: false, unique: true	 |
 | encrypted_password | string   | null: false                |
-| family_name(kanji) | string   | null: false                |
-| first_name(kanji)  | string   | null: false                |
-| family_name(kana)  | string   | null: false                |
-| first_name(kana)   | string   | null: false                |
+| family_name_kanji  | string   | null: false                |
+| first_name_kanji   | string   | null: false                |
+| family_name_kana   | string   | null: false                |
+| first_name_kana    | string   | null: false                |
 | birth              | date     | null: false                |
 
 ### Association
@@ -55,7 +55,7 @@
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| post_code     | string     | null: false                    |
+| postal_code     | string     | null: false                    |
 | prefecture_id | interer    | null: false                    |
 | city          | string     | null: false                    |
 | street        | string     | null: false                    |

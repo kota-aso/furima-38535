@@ -1,0 +1,33 @@
+ja:
+  activerecord:
+      attributes:
+        user:
+          nickname: ニックネーム
+          family_name_kanji: 名前（姓）
+          first_name_kanji : 名前（名）
+          family_name_kana : 名前（セイ）
+          first_name_kana  : 名前（メイ）
+          birth            : 生年月日
+      
+        item:
+          item_name: 商品名
+          item_description: 商品の説明
+          image: 商品画像
+          item_category_id: カテゴリー
+          item_status_id: 商品の状態
+          shipping_charger_id: 配送料の負担
+          prefecture_id: 都道府県
+          days_to_ship_id: 発送までの日数
+          price: 販売価格
+
+  activemodel:
+    attributes:
+      order_address:
+        postal_code: 郵便番号
+        is invalid. : に
+        Include hyphen(-): ハイフン(-)を含んでください
+        city: 市町村区
+        street: 番地
+        building: 建物名
+        phone_number: 電話番号
+        token: クレジットカード情報
